@@ -25,11 +25,8 @@ export default function ProductDetail() {
             <Typography
               variant='h4'
               sx={{
-                fontSize: '24px',
                 color: 'primary.main',
                 pb: 1,
-                fontWeight: 600,
-                letterSpacing: '0.75px',
               }}
             >
               Green Leafed Plant
