@@ -1,33 +1,12 @@
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Button,
-  Container,
-  Typography,
-} from '@mui/material';
-import { useState } from 'react';
+import { Box, Button, Container, Typography } from '@mui/material';
 
 import bookmark from '../../assets/icons/bookmark.svg';
 import product from '../../assets/images/product.jpg';
+import AccordionGroup from '../../components/AccordionGroup';
+import BottomButton from '../../components/BottomButton';
 import Navbar from '../../components/Navbar';
 
 export default function ProductDetail() {
-  const [isExpanded, setIsExpanded] = useState<string | false>(false);
-
-  const accordionTitles = [
-    { id: 0, title: 'Details & Care' },
-    { id: 1, title: 'Size & Fit' },
-    { id: 2, title: 'Features' },
-    { id: 3, title: 'Sustainiability' },
-  ];
-
-  const handleChange = (expanded: boolean, activeAccor: string) => {
-    setIsExpanded(expanded ? activeAccor : false);
-  };
-
   return (
     <Container maxWidth={false} sx={{ height: '100vh', px: '0 !important', overflowY: 'hidden' }}>
       <Navbar />
@@ -89,67 +68,10 @@ export default function ProductDetail() {
                 Select Size
               </Button>
             </Box>
-            {accordionTitles.map((title) => (
-              <Accordion
-                key={title.id}
-                disableGutters={true}
-                sx={{
-                  boxShadow: 'none',
-                  '&::before': { bgcolor: 'white' },
-                }}
-                expanded={isExpanded === `panel${title.id}`}
-                onChange={(event: React.SyntheticEvent, expanded: boolean) =>
-                  handleChange(expanded, `panel${title.id}`)
-                }
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls={`panel${title.id}-content`}
-                  id={`panel${title.id}-header`}
-                  sx={{ px: 0 }}
-                >
-                  <Typography
-                    variant={isExpanded === `panel${title.id}` ? 'subtitle1' : 'subtitle2'}
-                    sx={{
-                      color: isExpanded === `panel${title.id}` ? 'primary.main' : 'secondary.main',
-                    }}
-                  >
-                    {title.title}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ px: 0 }}>
-                  <Typography variant='body2'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-                    lacus ex, sit amet blandit leo lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            ))}
+            <AccordionGroup />
           </Box>
-          <Box
-            sx={{
-              px: 22,
-              py: 2,
-              borderTop: '1px solid #efefef',
-              position: 'fixed',
-              bottom: 0,
-              right: 0,
-              width: '45%',
-              bgcolor: 'white',
-            }}
-          >
-            <Button
-              variant='contained'
-              disableElevation={true}
-              sx={{
-                textTransform: 'unset',
-                fontFamily: 'Gowun Dodum',
-                py: 2.47,
-                width: '100%',
-              }}
-            >
-              Continue Checkout
-            </Button>
+          <Box sx={{ position: 'fixed', bottom: 0, right: 0, width: '45%' }}>
+            <BottomButton />
           </Box>
         </Container>
       </Container>
