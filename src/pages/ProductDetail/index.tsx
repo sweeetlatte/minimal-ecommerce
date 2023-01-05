@@ -43,7 +43,8 @@ export default function ProductDetail() {
           sx={{ flexBasis: '45%', p: '0 !important', position: 'relative', overflow: 'auto' }}
         >
           <Box sx={{ px: 22, py: 16, color: 'secondary.main' }}>
-            <Box
+            <Typography
+              variant='h4'
               sx={{
                 fontSize: '24px',
                 color: 'primary.main',
@@ -53,21 +54,19 @@ export default function ProductDetail() {
               }}
             >
               Green Leafed Plant
-            </Box>
+            </Typography>
             <Typography variant='body1' sx={{ pb: 4 }}>
               Six carbon (C6) compounds including alcohols, aldehydes and esters
             </Typography>
-            <Box
+            <Typography
+              variant='h5'
               sx={{
-                fontSize: '24px',
                 color: 'primary.main',
                 pb: 7,
-                fontWeight: 600,
-                letterSpacing: '0.75px',
               }}
             >
               $ 957
-            </Box>
+            </Typography>
             <Typography variant='body2'>
               Bright flowers and variegation cannot be seen well unless there is a solid backdrop of
               green leaf plants.

@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 import bookmark from '../../assets/icons/bookmark.svg';
 import bag from '../../assets/icons/briefcase.svg';
@@ -24,17 +24,19 @@ export default function Navbar() {
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <img src={menu} alt='' />
-        <div style={{ paddingLeft: '16px', fontSize: '20px' }}>Leafee</div>
+        <img style={{ cursor: 'pointer' }} src={menu} alt='' />
+        <Typography variant='h5' sx={{ pl: '16px', fontSize: '20px', cursor: 'pointer' }}>
+          Leafee
+        </Typography>
       </Box>
       <Box sx={{ display: 'flex' }}>
-        <Box>
+        <Box sx={{ cursor: 'pointer' }}>
           <img src={bag} alt='' />
         </Box>
-        <Box sx={{ ml: 3 }}>
+        <Box sx={{ cursor: 'pointer', ml: 3 }}>
           <img src={bookmark} alt='' />
         </Box>
-        <Box sx={{ ml: 3 }}>
+        <Box sx={{ cursor: 'pointer', ml: 3 }}>
           <img src={user} alt='' />
         </Box>
       </Box>
