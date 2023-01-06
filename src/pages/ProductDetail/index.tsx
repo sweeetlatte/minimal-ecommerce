@@ -1,6 +1,6 @@
 import { Box, Button, Container, Typography } from '@mui/material';
+import * as Icon from 'react-feather';
 
-import bookmark from '../../assets/icons/bookmark.svg';
 import product from '../../assets/images/product.jpg';
 import AccordionGroup from '../../components/AccordionGroup';
 import BottomButton from '../../components/BottomButton';
@@ -8,66 +8,56 @@ import Navbar from '../../components/Navbar';
 
 export default function ProductDetail() {
   return (
-    <Container maxWidth={false} sx={{ height: '100vh', px: '0 !important', overflowY: 'hidden' }}>
+    <Container maxWidth={false} sx={{ height: '100vh', px: '0 !important' }}>
       <Navbar />
-      <Container
-        maxWidth={false}
-        sx={{ height: '100%', pt: '94px', px: '0 !important', display: 'flex' }}
-      >
-        <Box sx={{ flexBasis: '55%' }}>
-          <img style={{ objectFit: 'cover' }} width={'100%'} height={'100%'} src={product} alt='' />
+      <Container maxWidth={false} sx={{ pt: 7.375, px: '0 !important' }}>
+        <Box
+          sx={{ height: '90vh', '> img': { width: '100%', height: '100%', objectFit: 'cover' } }}
+        >
+          <img src={product} alt='' />
         </Box>
         <Container
           maxWidth={false}
-          sx={{ flexBasis: '45%', p: '0 !important', position: 'relative', overflow: 'auto' }}
+          // sx={{ flexBasis: '45%', p: '0 !important', position: 'relative', overflow: 'auto' }}
+          sx={{ p: '0 !important' }}
         >
-          <Box sx={{ px: 22, py: 16, color: 'secondary.main' }}>
-            <Typography
-              variant='h4'
-              sx={{
-                color: 'primary.main',
-                pb: 1,
-              }}
-            >
+          <Box sx={{ px: 2, py: 2, color: 'secondary.main' }}>
+            <Typography variant='h4' sx={{ color: 'primary.main', pb: 1 }}>
               Green Leafed Plant
             </Typography>
-            <Typography variant='body1' sx={{ pb: 4 }}>
+            <Typography variant='body2' sx={{ pb: 4 }}>
               Six carbon (C6) compounds including alcohols, aldehydes and esters
             </Typography>
-            <Typography
-              variant='h5'
-              sx={{
-                color: 'primary.main',
-                pb: 7,
-              }}
-            >
+            <Typography variant='h5' sx={{ color: 'primary.main', pb: 4 }}>
               $ 957
             </Typography>
             <Typography variant='body2'>
               Bright flowers and variegation cannot be seen well unless there is a solid backdrop of
               green leaf plants.
             </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', pt: 13, pb: 10 }}>
-              <Button variant='outlined' sx={{ width: 64, height: 64 }}>
-                <img src={bookmark} alt='' />
+            <Box
+              sx={{
+                display: 'flex',
+                py: 8,
+                '> *': { p: 'unset !important' },
+                '> * + *': { ml: 2 },
+              }}
+            >
+              <Button variant='outlined' sx={{ minWidth: 52, height: 52 }}>
+                <Icon.Bookmark size={22} strokeWidth={1} />
               </Button>
               <Button
                 variant='contained'
                 disableElevation={true}
-                sx={{
-                  textTransform: 'unset',
-                  fontFamily: 'Gowun Dodum',
-                  py: 2.47,
-                  width: '100%',
-                  ml: 2,
-                }}
+                sx={{ textTransform: 'unset', fontFamily: 'Gowun Dodum', width: '100%' }}
               >
                 Select Size
               </Button>
             </Box>
             <AccordionGroup />
           </Box>
-          <Box sx={{ position: 'fixed', bottom: 0, right: 0, width: '45%' }}>
+          {/* <Box sx={{ position: 'fixed', bottom: 0, right: 0, width: '45%' }}> */}
+          <Box>
             <BottomButton />
           </Box>
         </Container>

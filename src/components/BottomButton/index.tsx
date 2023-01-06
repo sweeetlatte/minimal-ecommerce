@@ -4,10 +4,11 @@ export default function BottomButton() {
   return (
     <Box
       sx={{
-        px: 22,
+        px: 2,
         py: 2,
         borderTop: '1px solid #efefef',
         bgcolor: 'white',
+        '> *': { p: 'unset !important' },
       }}
     >
       <Button
@@ -18,6 +19,7 @@ export default function BottomButton() {
           fontFamily: 'Gowun Dodum',
           py: 2.47,
           width: '100%',
+          height: 52,
         }}
       >
         Continue Checkout
