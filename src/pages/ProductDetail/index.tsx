@@ -10,7 +10,12 @@ export default function ProductDetail() {
   return (
     <Container maxWidth={false} sx={{ height: '100vh', px: '0 !important' }}>
       <Navbar />
-      <Container maxWidth={false} sx={{ pt: 7.375, px: '0 !important' }}>
+      <Container
+        maxWidth={false}
+        sx={{
+          px: '0 !important',
+        }}
+      >
         <Box
           sx={{ height: '90vh', '> img': { width: '100%', height: '100%', objectFit: 'cover' } }}
         >
