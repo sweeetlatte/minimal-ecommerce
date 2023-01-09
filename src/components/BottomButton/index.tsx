@@ -4,7 +4,7 @@ export default function BottomButton() {
   return (
     <Box
       sx={{
-        px: 2,
+        px: { xs: 2, xl: 22 },
         py: 2,
         borderTop: '1px solid #efefef',
         bgcolor: 'white',
@@ -16,7 +16,6 @@ export default function BottomButton() {
         disableElevation={true}
         sx={{
           textTransform: 'unset',
-          fontFamily: 'Gowun Dodum',
           py: 2.47,
           width: '100%',
           height: 52,

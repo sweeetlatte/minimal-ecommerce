@@ -12,7 +12,7 @@ export default function Navbar() {
         position: 'sticky',
         top: 0,
         left: 0,
-        py: 2,
+        py: { xs: 2, xl: 4 },
         px: { xs: 2, xl: 6 },
         zIndex: 1,
         width: '100%',
@@ -28,7 +28,7 @@ export default function Navbar() {
         }}
       >
         <Icon.Menu size={22} strokeWidth={1} />
-        <Typography variant='h5' sx={{ ml: 1.5 }}>
+        <Typography variant='h5' sx={{ ml: 2 }}>
           Leafee
         </Typography>
       </Box>

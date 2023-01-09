@@ -8,25 +8,37 @@ import Navbar from '../../components/Navbar';
 
 export default function ProductDetail() {
   return (
-    <Container maxWidth={false} sx={{ height: '100vh', px: '0 !important' }}>
+    <Container
+      maxWidth={false}
+      sx={{ height: '100vh', px: '0 !important', overflowY: { xl: 'hidden' } }}
+    >
       <Navbar />
       <Container
         maxWidth={false}
         sx={{
           px: '0 !important',
+          display: { xl: 'flex' },
+          height: { xl: '92%' },
         }}
       >
         <Box
-          sx={{ height: '90vh', '> img': { width: '100%', height: '100%', objectFit: 'cover' } }}
+          sx={{
+            flexBasis: { xl: '55%' },
+            height: { xs: '90vh', xl: '100%' },
+            '> img': { width: '100%', height: '100%', objectFit: 'cover' },
+          }}
         >
           <img src={product} alt='' />
         </Box>
         <Container
           maxWidth={false}
-          // sx={{ flexBasis: '45%', p: '0 !important', position: 'relative', overflow: 'auto' }}
-          sx={{ p: '0 !important' }}
+          sx={{
+            flexBasis: { xl: '45%' },
+            p: '0 !important',
+            overflow: 'auto',
+          }}
         >
-          <Box sx={{ px: 2, py: 2, color: 'secondary.main' }}>
+          <Box sx={{ px: { xs: 2, xl: 22 }, py: { xs: 2, xl: 16 }, color: 'secondary.main' }}>
             <Typography variant='h4' sx={{ color: 'primary.main', pb: 1 }}>
               Green Leafed Plant
             </Typography>
@@ -45,7 +57,6 @@ export default function ProductDetail() {
                 display: 'flex',
                 py: 8,
                 '> *': { p: 'unset !important' },
-                '> * + *': { ml: 2 },
               }}
             >
               <Button variant='outlined' sx={{ minWidth: 52, height: 52 }}>
@@ -54,15 +65,21 @@ export default function ProductDetail() {
               <Button
                 variant='contained'
                 disableElevation={true}
-                sx={{ textTransform: 'unset', fontFamily: 'Gowun Dodum', width: '100%' }}
+                sx={{ textTransform: 'unset', width: '100%', ml: 2 }}
               >
                 Select Size
               </Button>
             </Box>
             <AccordionGroup />
           </Box>
-          {/* <Box sx={{ position: 'fixed', bottom: 0, right: 0, width: '45%' }}> */}
-          <Box>
+          <Box
+            sx={{
+              position: { xl: 'fixed' },
+              bottom: { xl: 0 },
+              right: { xl: 0 },
+              width: { xl: '45%' },
+            }}
+          >
             <BottomButton />
           </Box>
         </Container>
