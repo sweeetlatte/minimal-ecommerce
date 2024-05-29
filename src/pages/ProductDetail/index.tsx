@@ -25,7 +25,12 @@ export default function ProductDetail() {
           sx={{
             flexBasis: { xl: '55%' },
             height: { xs: '90vh', xl: '100%' },
-            '> img': { width: '100%', height: '100%', objectFit: 'cover' },
+            '> img': {
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: '40% 70%',
+            },
           }}
         >
           <img src={product} alt='' />
